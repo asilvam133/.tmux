@@ -34,6 +34,18 @@ By default, there are only two plugins:
     * `prefix+C` will create a new session without detaching.
     * `prefix+X` will delete the current session and will move to another session after.
 
+## Testing everything
+First, kill the Tmux server detaching from the current session with `prefix+d` and `tmux kill-server` afterwards.
+
+Run `tmux`.
+
+Run `prefix+<C-f>`. Type the directory where you would like to CD. *Make sure you ran `chmod +x` on the tmux-sessionizer script if nothing happens*.
+
+Type `prefix+s` to see all the available sessions.
+
+Navigate using `k` and `j` to go up and down (or the arrow keys) and select the first session (the one with the index zero) and press enter.
+
+Type `prefix+X` to delete the session. Press `y` to confirm.
 
 ## Some notes
 Check The Primeagen's dot files to check the original tmux-sessionizer.
