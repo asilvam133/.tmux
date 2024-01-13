@@ -1,13 +1,41 @@
 # Tmux dot files
 
-Create the Tmux config directory: `mkdir ~/.config/tmux`
+## Installation
+Clone this repo inside you .config folder:
+```bash
+git clone https://github.com/asilvam133/.tmux.git ~/.config/tmux
+```
 
-Place `tmux.conf` inside the Tmux config directory.
+Clone Tmux Plugin Manager:
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
 
-Place the files inside `scripts/` in `~/.local/bin/` and `chmod +x` each one of them. Then, add the following to `.zshrc` if you'll like to run them from the raw command line.
-* For the tmux-sessionizer:
-`alias tmux-sessionizer='~/.local/bin/tmux-sessionizer'`
+## The Primeagen's Tmux Sessionizer
+Place `scripts/tmux-sessionizer` in `~/.local/bin/` and run `chmod +x ~/.local/bin/tmux-sessionizer`.
 
-Run this line `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
+## Load config and install plugins
+
+Then, open a Tmux session by running `tmux`. The session name is not important, because the tmux-sessionizer will name it after the project (directory) name.
 
 Run `source ~/.config/tmux/tmux.conf`
+
+Just to make sure the configuration is loaded, run `prefix+d` to detach from the current from the current session.
+
+*IMPORTANT - The prefix is `Ctrl+a` in this config*
+
+Run `tmux kill-server`. Then open a Tmux a session by running `tmux`.
+
+Finally, run `prefix+I` to install the plugins available in the `tmux.conf` file.
+
+By default, there are only two plugins:
+* nhdaly/tmux-better-mouse-mode: Improves using the mouse to scroll up/down.
+* tmux-plugins/tmux-sessionist: Gives some extra capabilities to handle Tmux sessions while we are already in a Tmux session. For instance:
+    * `prefix+C` will create a new session without detaching.
+    * `prefix+X` will delete the current session and will move to another session after.
+
+
+## Some notes
+Check The Primeagen's dot files to check the original tmux-sessionizer.
+
+I try to have the UI as minimal as possible, so right now I only change the background to blend with my terminal background.
